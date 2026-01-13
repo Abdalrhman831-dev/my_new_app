@@ -1,0 +1,882 @@
+
+        /* إعدادات عالم الخيال */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --magic-pink: #ff69b4;
+            --crystal-blue: #00e5ff;
+            --elf-green: #39ff14;
+            --unicorn-purple: #9370db;
+            --dragon-red: #ff4500;
+            --wizard-blue: #4169e1;
+            --fairy-gold: #ffd700;
+            --shadow-dark: #0a001a;
+            --starlight: #e6e6fa;
+        }
+        
+        body {
+            font-family: 'Almarai', sans-serif;
+            background-color: var(--shadow-dark);
+            color: var(--starlight);
+            overflow-x: hidden;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(147, 112, 219, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 229, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 105, 180, 0.05) 0%, transparent 30%);
+            min-height: 100vh;
+        }
+        
+        /* النجوم المتلألئة في الخلفية */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.2; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        /* السحب السحرية */
+        .magic-clouds {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .cloud {
+            position: absolute;
+            background: linear-gradient(135deg, var(--crystal-blue), var(--unicorn-purple));
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.5;
+        }
+        
+        /* الحاوية الرئيسية */
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* الترويسة السحرية */
+        .magic-header {
+            padding: 25px 0;
+            position: relative;
+            border-bottom: 2px solid transparent;
+            border-image: linear-gradient(to right, transparent, var(--magic-pink), var(--crystal-blue), transparent);
+            border-image-slice: 1;
+            margin-bottom: 40px;
+            background: rgba(10, 0, 26, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 10px 30px rgba(147, 112, 219, 0.4);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .portal-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .portal {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--crystal-blue), var(--magic-pink), var(--shadow-dark));
+            position: relative;
+            animation: portalSpin 20s infinite linear;
+            box-shadow: 
+                0 0 30px var(--crystal-blue),
+                0 0 60px var(--magic-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15px;
+        }
+        
+        .portal i {
+            font-size: 2rem;
+            color: var(--fairy-gold);
+            animation: iconFloat 3s infinite ease-in-out;
+        }
+        
+        @keyframes portalSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .logo-text h1 {
+            font-family: 'Scheherazade New', serif;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, var(--magic-pink), var(--crystal-blue), var(--elf-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        }
+        
+        .logo-text p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* التنقل السحري */
+        .magic-nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .spell-button {
+            background: rgba(147, 112, 219, 0.2);
+            color: var(--crystal-blue);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            padding: 10px 20px;
+            margin: 0 5px 5px;
+            border-radius: 30px;
+            font-family: 'Almarai', sans-serif;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .spell-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--magic-pink), var(--crystal-blue));
+            transition: width 0.4s;
+            z-index: -1;
+        }
+        
+        .spell-button:hover::before {
+            width: 100%;
+        }
+        
+        .spell-button:hover {
+            color: white;
+            box-shadow: 0 0 15px var(--crystal-blue);
+            transform: translateY(-3px);
+        }
+        
+        .active-category {
+            background: linear-gradient(to right, var(--magic-pink), var(--crystal-blue));
+            color: white;
+            box-shadow: 0 0 15px var(--magic-pink);
+        }
+        
+        /* سلة التسوق السحرية */
+        .magic-cart {
+            position: relative;
+            margin-right: 20px;
+        }
+        
+        .cart-icon {
+            font-size: 1.8rem;
+            color: var(--fairy-gold);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .cart-icon:hover {
+            transform: scale(1.2);
+            text-shadow: 0 0 15px var(--fairy-gold);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: linear-gradient(to right, var(--dragon-red), var(--magic-pink));
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 0 10px var(--dragon-red);
+        }
+        
+        /* قسم الهيرو */
+        .magic-hero {
+            background: 
+                linear-gradient(rgba(10, 0, 26, 0.8), rgba(10, 0, 26, 0.9)),
+                url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            margin-bottom: 60px;
+            border-radius: 30px;
+            border: 1px solid rgba(0, 229, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magic-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 105, 180, 0.1), transparent);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .magic-hero h2 {
+            font-family: 'Scheherazade New', serif;
+            font-size: 3.5rem;
+            background: linear-gradient(to right, var(--fairy-gold), var(--magic-pink), var(--crystal-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+        }
+        
+        .magic-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #ddd;
+        }
+        
+        .magic-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--magic-pink), var(--unicorn-purple));
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.4s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(147, 112, 219, 0.5);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .magic-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(to right, var(--crystal-blue), var(--wizard-blue));
+            transition: width 0.4s;
+            z-index: -1;
+        }
+        
+        .magic-btn:hover::before {
+            width: 100%;
+        }
+        
+        .magic-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.6);
+        }
+        
+        /* الأقسام السحرية */
+        .magic-section {
+            margin-bottom: 80px;
+            background: rgba(15, 5, 35, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 40px;
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .magic-section::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--magic-pink), var(--crystal-blue), var(--elf-green), var(--unicorn-purple));
+            z-index: -1;
+            border-radius: 32px;
+            opacity: 0.3;
+        }
+        
+        .section-title {
+            font-family: 'Scheherazade New', serif;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            color: var(--fairy-gold);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .section-title i {
+            margin-left: 15px;
+            font-size: 2rem;
+        }
+        
+        /* المنتجات السحرية */
+        .magic-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .product-card {
+            background: rgba(25, 15, 45, 0.9);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s;
+            border: 1px solid transparent;
+            position: relative;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, var(--magic-pink), var(--crystal-blue));
+            z-index: 2;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 229, 255, 0.3);
+            border-color: var(--crystal-blue);
+        }
+        
+        .product-img {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cosmetics .product-img {
+            background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(147, 112, 219, 0.1));
+        }
+        
+        .electronics .product-img {
+            background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(65, 105, 225, 0.1));
+        }
+        
+        .product-img i {
+            font-size: 5rem;
+            z-index: 1;
+        }
+        
+        .cosmetics .product-img i {
+            color: var(--magic-pink);
+            text-shadow: 0 0 20px var(--magic-pink);
+        }
+        
+        .electronics .product-img i {
+            color: var(--crystal-blue);
+            text-shadow: 0 0 20px var(--crystal-blue);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(to right, var(--dragon-red), var(--magic-pink));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 3;
+        }
+        
+        .product-info {
+            padding: 25px;
+        }
+        
+        .product-category {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        
+        .product-name {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--starlight);
+            font-weight: bold;
+        }
+        
+        .product-description {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            min-height: 60px;
+        }
+        
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cosmetics .product-price {
+            color: var(--magic-pink);
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+        }
+        
+        .electronics .product-price {
+            color: var(--crystal-blue);
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+        }
+        
+        .currency {
+            font-size: 1rem;
+            margin-right: 5px;
+            color: var(--fairy-gold);
+        }
+        
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .add-to-cart {
+            background: linear-gradient(to right, var(--elf-green), var(--wizard-blue));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            margin-left: 10px;
+        }
+        
+        .add-to-cart i {
+            margin-left: 8px;
+        }
+        
+        .add-to-cart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px var(--elf-green);
+        }
+        
+        .wishlist-btn {
+            background: rgba(255, 105, 180, 0.2);
+            color: var(--magic-pink);
+            border: 1px solid var(--magic-pink);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .wishlist-btn:hover {
+            background: var(--magic-pink);
+            color: white;
+            box-shadow: 0 0 15px var(--magic-pink);
+        }
+        
+        .wishlist-btn.active {
+            background: var(--dragon-red);
+            color: white;
+            border-color: var(--dragon-red);
+        }
+        
+        /* الشرائح العائمة */
+        .floating-items {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .floating-item {
+            position: absolute;
+            opacity: 0.7;
+            animation: floatItem 20s infinite linear;
+        }
+        
+        @keyframes floatItem {
+            0% { transform: translateY(0) rotate(0deg); }
+            90% { transform: translateY(-1000px) rotate(720deg); }
+        }
+        
+        /* الفوتر السحري */
+        .magic-footer {
+            text-align: center;
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            border-top: 1px solid rgba(0, 229, 255, 0.2);
+            background: rgba(10, 0, 26, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 30px 30px 0 0;
+            position: relative;
+        }
+        
+        .magic-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 5px;
+            background: linear-gradient(to right, var(--magic-pink), var(--crystal-blue), var(--elf-green));
+            border-radius: 0 0 5px 5px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-family: 'Scheherazade New', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--fairy-gold);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--crystal-blue);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 105, 180, 0.2);
+            border-radius: 50%;
+            color: var(--magic-pink);
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 105, 180, 0.3);
+        }
+        
+        .social-icons a:hover {
+            background: var(--magic-pink);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* القائمة المتنقلة */
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: var(--crystal-blue);
+            cursor: pointer;
+            margin-right: 15px;
+        }
+        
+        /* التجاوب مع الأجهزة */
+        @media (max-width: 1100px) {
+            .magic-products {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .portal-logo {
+                margin-bottom: 20px;
+            }
+            
+            .magic-nav {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            .magic-hero h2 {
+                font-size: 2.8rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .magic-nav {
+                width: 100%;
+                order: 3;
+                margin-top: 15px;
+                display: none;
+                flex-direction: column;
+            }
+            
+            .magic-nav.active {
+                display: flex;
+            }
+            
+            .spell-button {
+                width: 100%;
+                margin: 5px 0;
+                text-align: center;
+            }
+            
+            .magic-cart {
+                margin-right: 0;
+                margin-top: 20px;
+            }
+            
+            .magic-hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            .magic-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .magic-section {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .magic-products {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .magic-hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .add-to-cart {
+                width: 100%;
+                margin-left: 0;
+            }
+            
+            .wishlist-btn {
+                align-self: flex-end;
+            }
+        }
+
+
+
+        /* contact us */
+
+
+        /* تنسيقات صفحة اتصل بنا */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.contact-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.info-card:hover {
+    background: rgba(147, 112, 219, 0.1);
+    transform: translateX(-10px);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+}
+
+.info-card i {
+    font-size: 2rem;
+    color: var(--fairy-gold);
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: var(--crystal-blue);
+    margin-bottom: 10px;
+}
+
+.contact-form-container {
+    background: rgba(10, 0, 26, 0.5);
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    backdrop-filter: blur(15px);
+}
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: right;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--starlight);
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(147, 112, 219, 0.3);
+    border-radius: 15px;
+    color: white;
+    font-family: 'Almarai', sans-serif;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--crystal-blue);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.input-group option {
+    background: var(--shadow-dark);
+    color: white;
+}
+
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .info-card:hover {
+        transform: translateY(-10px);
+    }
+}

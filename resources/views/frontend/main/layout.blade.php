@@ -22,9 +22,7 @@
    
 @include('frontend.holdfot.heder')
 
-@yield('content')
-
-
+@yield('content')  {{-- تأكد أن الكلمة هنا هي content --}}
 
 @include('frontend.holdfot.footer')
 

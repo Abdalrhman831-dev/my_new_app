@@ -880,3 +880,8 @@
         transform: translateY(-10px);
     }
 }
+
+.magic-hero {
+    position: relative;
+    z-index: 10; /* لضمان ظهور المحتوى فوق النجوم والغيوم */
+}

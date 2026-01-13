@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('content') {{-- تم تصحيح الإملاء هنا من contenet إلى content --}}
+@section('content') 
  
    <div class="stars" id="stars-container"></div>
     <div class="magic-clouds" id="clouds-container"></div>

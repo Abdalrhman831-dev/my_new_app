@@ -7,6 +7,11 @@ Route::get('/contact', function () {
     return view('frontend.contact');
 });
 
+Route::get('/', function () {
+    // يجب التأكد من مسار الملف هنا
+    // إذا كان index داخل مجلد main
+    return view('frontend.main.index'); 
+});
 
 
 

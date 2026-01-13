@@ -16,15 +16,9 @@
     
    
 </head>
-<body>
-
-    
-   
+<body> 
 @include('frontend.holdfot.heder')
-
 @yield('content')  {{-- تأكد أن الكلمة هنا هي content --}}
-
 @include('frontend.holdfot.footer')
-
 </body>
 </html>

@@ -9,7 +9,7 @@
                         <i class="fas fa-gem"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>بازار الأثير</h1>
+                        <h1> بازار الحاتمي</h1>
                         <p>متجر الخيال السحري</p>
                     </div>
                 </div>
@@ -19,17 +19,21 @@
                 </div>
                 
                 <nav class="magic-nav">
-                    <a href="index.html">
+                    <a href="{{asset('stor')}}">
                     <button class="spell-button active-category" data-category="all"><i class="fas fa-star"></i> الكل</button>
                     </a>
-                    <a href="Beautification.html">
+                    <a href="{{asset('beaute')}}">
                     <button class="spell-button" data-category="cosmetics" ><i class="fas fa-palette"></i> أدوات التجميل</button>
                     </a>
-                     <a href="Electronics.html">
+                     <a href="{{asset('electro')}}">
                     <button class="spell-button" data-category="electronics"><i class="fas fa-microchip"></i> الإلكترونيات</button>
                     </a>
+                    <a href="{{asset('magic')}}">
                     <button class="spell-button" data-category="magic"><i class="fas fa-hat-wizard"></i> المنتجات السحرية</button>
+                    </a>
+                     <a href="{{asset('off')}}">
                     <button class="spell-button" data-category="offers"><i class="fas fa-gem"></i> العروض الخاصة</button>
+                      </a>
                 </nav>
                 
                 <div class="magic-cart">

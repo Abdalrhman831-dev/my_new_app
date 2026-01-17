@@ -881,7 +881,79 @@
     }
 }
 
-.magic-hero {
-    position: relative;
-    z-index: 10; /* لضمان ظهور المحتوى فوق النجوم والغيوم */
+
+
+
+/* تحسين شكل كروت الإحصائيات والقيم */
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(184, 134, 11, 0.3);
+    transition: all 0.4s ease;
 }
+
+.about-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('magic-bg.jpg'); /* اختياري */
+    background-size: cover;
+    padding: 150px 0 100px 0;
+}
+
+
+
+.product-img i {
+    font-size: 5rem;
+    color: var(--magic-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+
+
+
+ /* تنسيقات خاصة بصفحة العروض */
+        .offer-card {
+            border: 2px dashed var(--magic-gold) !important;
+            position: relative;
+            overflow: hidden;
+        }
+        .discount-tag {
+            position: absolute;
+            top: 20px;
+            left: -35px;
+            background: #ff4d4d;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(-45deg);
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+        .timer-container {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        .timer-display {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-family: 'Almarai', sans-serif;
+        }
+        .timer-segment {
+            text-align: center;
+        }
+        .timer-num {
+            display: block;
+            font-size: 1.5rem;
+            color: var(--magic-gold);
+            font-weight: bold;
+        }
+        .timer-label {
+            font-size: 0.7rem;
+            color: #ccc;

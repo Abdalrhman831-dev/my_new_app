@@ -3,20 +3,35 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StoresController;
 
+
+
 Route::get('/contact', function () {
     return view('frontend.contact');
 });
 
-Route::get('/', function () {
-    // يجب التأكد من مسار الملف هنا
-    // إذا كان index داخل مجلد main
-    return view('frontend.main.index'); 
+Route::get('/abut', function () {
+    return view('frontend.abut');
+});
+
+Route::get('/magic', function () {
+    return view('frontend.Magicproducts');
 });
 
 
+Route::get('/off', function () {
+    return view('frontend.Offerspage');
+});
 
 
-Route::resource('stor',StoresController::class);
+// Route::get('/', [StoresController::class, 'index']);
+
+
+// هذا السطر سينشئ تلقائياً مسارات باسم stor.index, stor.store, stor.create إلخ
+Route::resource('stor', StoresController::class);
+
+// ثم أضف مسارات الأقسام التي طلبتها سابقاً
+Route::get('/electronics', [StoresController::class, 'showElectronics'])->name('electronics.show');
+Route::get('/beauty', [StoresController::class, 'showBeauty'])->name('beauty.show');
 
 
 

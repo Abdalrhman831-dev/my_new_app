@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Limit discounts</title>
     
+
     
     <link rel="stylesheet" href="{{asset('assest/css/all.css')}}">
     <link rel="stylesheet" href="{{asset('assest/css/bootstrap.css')}}" >
@@ -20,5 +21,6 @@
 @include('frontend.holdfot.heder')
 @yield('content')  {{-- تأكد أن الكلمة هنا هي content --}}
 @include('frontend.holdfot.footer')
+<script src="{{asset('assest/js/Script.js')}}"></script>
 </body>
 </html>

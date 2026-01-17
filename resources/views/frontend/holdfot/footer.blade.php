@@ -26,16 +26,16 @@
                 <div class="footer-section">
                     <h3>معلومات التواصل</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> بوابة الأثير، عالم الخيال</li>
-                        <li><i class="fas fa-phone"></i> 0123-456-7890</li>
-                        <li><i class="fas fa-envelope"></i> info@bazaar-ether.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> بوابة الحاتمي عالم الخيال</li>
+                        <li><i class="fas fa-phone"></i> 771283576</li>
+                        <li><i class="fas fa-envelope"></i> Alhatmy.com</li>
                         <li><i class="fas fa-clock"></i> مفتوح 24/7 عبر البوابات السحرية</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>© 2023 بازار الأثير - متجر الخيال السحري. جميع المنتجات مستوحاة من عوالم الخيال ولا تتحمل المتجر مسؤولية الآثار السحرية الجانبية.</p>
+                <p>© 2026 بازار الأثير - متجر الخيال السحري. جميع المنتجات مستوحاة من عوالم الخيال ولا تتحمل المتجر مسؤولية الآثار السحرية الجانبية.</p>
             </div>
         </div>
     </footer>

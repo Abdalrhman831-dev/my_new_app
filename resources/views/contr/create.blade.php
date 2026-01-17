@@ -3,6 +3,8 @@
 @section('content')
  
 
+
+
 <main class="container  p-3 border border-5 " style="width:1120px;">
     <div class="container">
         <div class="form-container">
@@ -44,13 +46,13 @@
                     
                     <div class="col-md-4 mb-3">
                         <label for="productCategory" class="form-label required">التصنيف</label>
-                        <select class="form-select" name="Classification" id="Classification" required>
+                        <select class="form-select" name="category_id" id="category_id" required>
                             <option value="" selected disabled>اختر التصنيف</option>
-                            <option value="الكترونيات">إلكترونيات</option>
-                            <option value="ملابس">ملابس</option>
-                            <option value="منتجات منزلية">منتجات منزلية</option>
-                            <option value="الجمال">الجمال</option>
-                            <option value="رياضة">رياضة</option>
+                             <option value="0">الرئيسيه</option>
+                            <option value="1">إلكترونيات</option>
+                            <option value="3"> الجمال</option>
+                            <option value="3">المنتجات السحريه </option>
+                            <option value="4">العروض الخاصه </option>
                         </select>
                         <div class="invalid-feedback">
                             يرجى اختيار تصنيف للمنتج.
@@ -119,7 +121,9 @@
                     </div>
                
               
-                    
+        
+
+
                 </div>
               
                   

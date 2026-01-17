@@ -12,8 +12,11 @@ use Illuminate\Support\Str;
      */
     public function index()
     {
-        $stor = Stores::All();
-        return view('frontend.main.layout',compact('stor'));
+   
+         $stor1 = Stores::where('category_id', 0)->first();
+        $stor = Stores::where('category_id', 1)->first();
+        
+        return view('frontend.main.index',compact('stor','stor1'));
     }
 
     /**
@@ -33,8 +36,9 @@ use Illuminate\Support\Str;
         'title' => 'required|string|max:200',
         'pric' => 'required|string|max:10',
         'condition' => 'required|string|max:50',
-       'Classification' => 'required|string|max:50',
+    //    'Classification' => 'required|string|max:50',
         'image' => 'required|image|mimes:jpg,jpeg,png,webp,jfif|max:2048',
+       'category_id' => 'required|integer',
     ]);
 
     // 2️⃣ إنشاء الـ slug
@@ -50,8 +54,9 @@ use Illuminate\Support\Str;
           'name'   => $request->name,
           'pric'   => $request->pric,
           'condition'   => $request->condition,
-          'Classification'   => $request->Classification,
+        'Classification' => $request->Classification ?? 'عام',
         'image'   => $imageName,
+        'category_id' => $request->category_id,
     ]);
 
     // 5️⃣ إعادة توجيه
@@ -91,4 +96,32 @@ use Illuminate\Support\Str;
     {
         //
     }
+
+// هذه الدالة تجلب فقط الإلكترونيات
+public function showElectronics()
+{
+    // نطلب من الجدول كل الصفوف التي تحمل رقم 2 (رقم الإلكترونيات)
+    $products = Stores::where('category_id', 1)->get();
+
+    return view('frontend.Electronics', compact('products'));
+}
+
+    // هذه الدالة تجلب فقط المنتجات التي اخترت لها "أدوات تجميل" عند الإضافة
+public function showBeauty()
+{
+    // نطلب من الجدول كل الصفوف التي تحمل رقم 1 (رقم التجميل)
+    $products = Stores::where('category_id', 2)->get();
+
+    return view('frontend.Beautification', compact('products'));
+}
+
+
+public function showindex()
+{
+    // نطلب من الجدول كل الصفوف التي تحمل رقم 1 (رقم التجميل)
+    $story = Stores::where('category_id', 3)->get();
+
+    return view('frontend.main.index', compact('story'));
+}
+
 }

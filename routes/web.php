@@ -5,6 +5,7 @@ use App\Http\Controllers\StoresController;
 
 
 
+
 Route::get('/contact', function () {
     return view('frontend.contact');
 });
@@ -13,9 +14,7 @@ Route::get('/abut', function () {
     return view('frontend.abut');
 });
 
-Route::get('/magic', function () {
-    return view('frontend.Magicproducts');
-});
+
 
 
 Route::get('/off', function () {
@@ -32,6 +31,10 @@ Route::resource('stor', StoresController::class);
 // ثم أضف مسارات الأقسام التي طلبتها سابقاً
 Route::get('/electronics', [StoresController::class, 'showElectronics'])->name('electronics.show');
 Route::get('/beauty', [StoresController::class, 'showBeauty'])->name('beauty.show');
+Route::get('/magic', [StoresController::class, 'magic'])->name('magic.show');
+
+
+
 
 
 
@@ -41,5 +44,7 @@ Route::get('/home/stor', [App\Http\Controllers\HomeController::class, 'storess']
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/users', [App\Http\Controllers\HomeController::class, 'users'])->name('users');
 Route::get('/contr', [App\Http\Controllers\HomeController::class, 'contr'])->name('contr.index');
+Route::get('/register', [App\Http\Controllers\HomeController::class, 'contr'])->name('auth.register');
+
 
 

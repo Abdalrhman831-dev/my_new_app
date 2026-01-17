@@ -40,6 +40,11 @@ class HomeController extends Controller
         return view('users');
     }
 
+         public function sinup()
+    {
+        return view('auth.register');
+    }
+
      public function contr()
     {
          $stor = Stores::All();

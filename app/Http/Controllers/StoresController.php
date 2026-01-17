@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Stores;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+
  class StoresController extends Controller
 {
     /**
@@ -13,8 +14,8 @@ use Illuminate\Support\Str;
     public function index()
     {
    
-         $stor1 = Stores::where('category_id', 0)->first();
-        $stor = Stores::where('category_id', 1)->first();
+         $stor1 = Stores::where('category_id', 1)->first();
+        $stor = Stores::where('category_id', 2)->first();
         
         return view('frontend.main.index',compact('stor','stor1'));
     }
@@ -36,12 +37,13 @@ use Illuminate\Support\Str;
         'title' => 'required|string|max:200',
         'pric' => 'required|string|max:10',
         'condition' => 'required|string|max:50',
-    //    'Classification' => 'required|string|max:50',
+       'Classification' => 'required|string|max:50',
         'image' => 'required|image|mimes:jpg,jpeg,png,webp,jfif|max:2048',
        'category_id' => 'required|integer',
     ]);
 
-    // 2️⃣ إنشاء الـ slug
+  
+    
    
 
     // 3️⃣ رفع الصورة
@@ -54,7 +56,7 @@ use Illuminate\Support\Str;
           'name'   => $request->name,
           'pric'   => $request->pric,
           'condition'   => $request->condition,
-        'Classification' => $request->Classification ?? 'عام',
+        'Classification' => $request->Classification  ,
         'image'   => $imageName,
         'category_id' => $request->category_id,
     ]);
@@ -123,5 +125,25 @@ public function showindex()
 
     return view('frontend.main.index', compact('story'));
 }
+
+
+public function magic()
+{
+    // نطلب من الجدول كل الصفوف التي تحمل رقم 1 (رقم التجميل)
+    $products = Stores::where('category_id', 4)->get();
+
+    return view('frontend.Magicproducts', compact('products'));
+}
+
+
+
+public function Offer()
+{
+    // نطلب من الجدول كل الصفوف التي تحمل رقم 1 (رقم التجميل)
+    $products = Stores::where('category_id', 5)->get();
+
+    return view('frontend.Offerspage', compact('products'));
+}
+
 
 }

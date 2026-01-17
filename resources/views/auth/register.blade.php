@@ -21,7 +21,7 @@
                 <p>انشئ حسابك في دقائق</p>
             </div>
 
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('auth.register') }}">
                         @csrf
                 <div class="form-group">
                     <label>الاسم الكامل</label>

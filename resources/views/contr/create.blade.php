@@ -48,11 +48,11 @@
                         <label for="productCategory" class="form-label required">التصنيف</label>
                         <select class="form-select" name="category_id" id="category_id" required>
                             <option value="" selected disabled>اختر التصنيف</option>
-                             <option value="0">الرئيسيه</option>
-                            <option value="1">إلكترونيات</option>
+                             <option value="1">الرئيسيه</option>
+                            <option value="2">إلكترونيات</option>
                             <option value="3"> الجمال</option>
-                            <option value="3">المنتجات السحريه </option>
-                            <option value="4">العروض الخاصه </option>
+                            <option value="4">المنتجات السحريه </option>
+                            <option value="5">العروض الخاصه </option>
                         </select>
                         <div class="invalid-feedback">
                             يرجى اختيار تصنيف للمنتج.
@@ -64,6 +64,15 @@
                         <textarea class="form-control" name="title" id="title" rows="4" placeholder="أدخل وصف المنتج" required></textarea>
                         <div class="invalid-feedback">
                             يرجى إدخال وصف للمنتج.
+                        </div>
+                    </div>
+
+
+                     <div class="col-md-8 mb-3">
+                        <label for="productName" class="form-label required">اسم المنتج</label>
+                        <input type="text" class="form-control" name="Classification" id="Classification" placeholder="أدخل اسم المنتج" required>
+                        <div class="invalid-feedback">
+                            يرجى إدخال نوع المنتج.
                         </div>
                     </div>
                 </div>
@@ -135,10 +144,7 @@
                 </div>
             </form>
         </div>
-   
-    
-    
-   
+ 
 </main>
 
  
@@ -146,3 +152,4 @@
 
 
 @endsection
+

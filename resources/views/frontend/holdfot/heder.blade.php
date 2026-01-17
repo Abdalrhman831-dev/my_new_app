@@ -22,16 +22,16 @@
                     <a href="{{asset('stor')}}">
                     <button class="spell-button active-category" data-category="all"><i class="fas fa-star"></i> الكل</button>
                     </a>
-                    <a href="{{asset('beaute')}}">
+                    <a href="{{route('electronics.show')}}">
                     <button class="spell-button" data-category="cosmetics" ><i class="fas fa-palette"></i> أدوات التجميل</button>
                     </a>
-                     <a href="{{asset('electro')}}">
+                     <a href="{{route('beauty.show')}}">
                     <button class="spell-button" data-category="electronics"><i class="fas fa-microchip"></i> الإلكترونيات</button>
                     </a>
-                    <a href="{{asset('magic')}}">
+                    <a href="{{route('magic.show')}}">
                     <button class="spell-button" data-category="magic"><i class="fas fa-hat-wizard"></i> المنتجات السحرية</button>
                     </a>
-                     <a href="{{asset('off')}}">
+                     <a href="{{route('magic.show')}}">
                     <button class="spell-button" data-category="offers"><i class="fas fa-gem"></i> العروض الخاصة</button>
                       </a>
                 </nav>

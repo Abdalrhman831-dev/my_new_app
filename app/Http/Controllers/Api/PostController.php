@@ -31,7 +31,7 @@ class PostController extends Controller
 
         ]);
 
-        $post = post::create($validate);
+        $post = post::create($validate); 
 
          return response()->json([
         'data'=>$post
